@@ -33,7 +33,7 @@ public class Receive_subscribe1 {
             QueueingConsumer.Delivery delivery = consumer.nextDelivery();
             String message = new String(delivery.getBody());
             System.out.println(" [Recv1] Received '" + message + "'");
-            Thread.sleep(10);
+            //Thread.sleep(10);
 
             channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
         }
