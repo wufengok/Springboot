@@ -15,12 +15,11 @@ public class Receive_route1 {
         Channel channel = connection.createChannel();
 
         // 声明队列
-        //channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
 
         // 绑定队列到交换机
-        //channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "error");
-        channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "info");
-        channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "other");
+        channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "error");
+        channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "warning");
 
         // 同一时刻服务器只会发一条消息给消费者
         channel.basicQos(1);
@@ -35,7 +34,7 @@ public class Receive_route1 {
             QueueingConsumer.Delivery delivery = consumer.nextDelivery();
             String message = new String(delivery.getBody());
             System.out.println(" [Recv1] Received '" + message + "'");
-            //Thread.sleep(10);
+            //hread.sleep(10);
 
             channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
         }

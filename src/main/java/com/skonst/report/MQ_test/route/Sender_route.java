@@ -5,7 +5,7 @@ import com.rabbitmq.client.Connection;
 import com.skonst.report.MQ_test.ConnectionUtil;
 
 public class Sender_route {
-    private final static String EXCHANGE_NAME = "test_exchange_fanout";
+    public  final static String EXCHANGE_NAME = "test_exchange_fanout";
 
     public static void main(String[] argv) throws Exception {
         // 获取到连接以及mq通道
@@ -13,12 +13,16 @@ public class Sender_route {
         Channel channel = connection.createChannel();
 
         // 声明exchange
-        channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
+        channel.exchangeDeclare(EXCHANGE_NAME, "direct");
 
         // 消息内容
-        String message = "Hello World!";
-        channel.basicPublish(EXCHANGE_NAME, "info", null, message.getBytes());
-        System.out.println(" [x] Sent '" + message + "'");
+        String warningmessage = "warningmessage";
+        String errormessage = "errormessage";
+        String successmessage = "successmessage";
+        channel.basicPublish(EXCHANGE_NAME, "warning", null, warningmessage.getBytes());
+        channel.basicPublish(EXCHANGE_NAME, "error", null, errormessage.getBytes());
+        channel.basicPublish(EXCHANGE_NAME, "success", null, successmessage.getBytes());
+        System.out.println("====================发送成功====================");
 
         channel.close();
         connection.close();
