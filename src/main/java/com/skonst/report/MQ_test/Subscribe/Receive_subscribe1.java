@@ -2,6 +2,7 @@ package com.skonst.report.MQ_test.Subscribe;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.QueueingConsumer;
 import com.skonst.report.MQ_test.ConnectionUtil;
 
 public class Receive_subscribe1 {
@@ -23,7 +24,7 @@ public class Receive_subscribe1 {
         channel.basicQos(1);
 
         // 定义队列的消费者
-        /*QueueingConsumer consumer = new QueueingConsumer(channel);
+        QueueingConsumer consumer = new QueueingConsumer(channel);
         // 监听队列，手动返回完成
         channel.basicConsume(QUEUE_NAME, false, consumer);
 
@@ -35,6 +36,6 @@ public class Receive_subscribe1 {
             Thread.sleep(10);
 
             channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
-        }*/
+        }
     }
 }

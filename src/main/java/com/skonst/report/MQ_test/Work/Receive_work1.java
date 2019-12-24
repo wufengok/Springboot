@@ -2,6 +2,7 @@ package com.skonst.report.MQ_test.Work;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.QueueingConsumer;
 import com.skonst.report.MQ_test.ConnectionUtil;
 
 public class Receive_work1 {
@@ -20,7 +21,7 @@ public class Receive_work1 {
         channel.basicQos(1);
 
         // 定义队列的消费者
-        /*QueueingConsumer consumer = new QueueingConsumer(channel);
+        QueueingConsumer consumer = new QueueingConsumer(channel);
         // 监听队列，false表示手动返回完成状态，true表示自动
         channel.basicConsume(QUEUE_NAME, false, consumer);
 
@@ -33,6 +34,6 @@ public class Receive_work1 {
             //Thread.sleep(5000);
             //下面这行注释掉表示使用手动确认模式
             channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
-        }*/
+        }
     }
 }

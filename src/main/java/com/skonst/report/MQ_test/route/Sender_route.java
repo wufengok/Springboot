@@ -17,7 +17,7 @@ public class Sender_route {
 
         // 消息内容
         String message = "Hello World!";
-        channel.basicPublish(EXCHANGE_NAME, "error", null, message.getBytes());
+        channel.basicPublish(EXCHANGE_NAME, "info", null, message.getBytes());
         System.out.println(" [x] Sent '" + message + "'");
 
         channel.close();
