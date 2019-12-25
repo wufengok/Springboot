@@ -17,4 +17,9 @@ public class RabbitMqHelloTest {
     public void queue_direct() {
         helloSender.queue_direct();
     }
+
+    @Test
+    public void queue_exception() {
+        helloSender.queue_exception();
+    }
 }
