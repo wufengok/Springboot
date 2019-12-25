@@ -17,9 +17,7 @@ spring:          #表示该配置直接为Spring容器负责处理
 #    # AUTO：自动应答，除非MessageListener抛出异常。
     listener:
       direct:
-        acknowledge-mode: manual
-      simple:
-        acknowledge-mode: manual
+        acknowledge-mode: MANUAL
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource   #配置当前要使用的数据源的操作类型那个
     driver-class-name: com.mysql.cj.jdbc.Driver      #配置MySQL的驱动程序类
