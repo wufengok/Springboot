@@ -1,18 +1,13 @@
 package com.study.MQ_Springboot.direct;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.core.Message;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-import org.springframework.amqp.rabbit.connection.CorrelationData;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//两种方式之一，另一种方式是在生产者端实现
+//@Configuration
 @Slf4j
 public class SenderConfig {
 
-    @Bean
+   /* @Bean
     public RabbitTemplate createRabbitTemplate(ConnectionFactory connectionFactory){
         RabbitTemplate rabbitTemplate = new RabbitTemplate();
         rabbitTemplate.setConnectionFactory(connectionFactory);
@@ -39,6 +34,6 @@ public class SenderConfig {
             }
         });
         return rabbitTemplate;
-    }
+    }*/
 }
 
