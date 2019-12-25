@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.skonst.report.mapper.CofUserAccountMapper">
+<mapper namespace="com.study.mapper.CofUserAccountMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.skonst.report.entity.CofUserAccount">
+    <resultMap id="BaseResultMap" type="com.study.entity.CofUserAccount">
         <id column="USER_ACCOUNT_ID" property="userAccountId" />
         <result column="CREATED_TIME" property="createdTime" />
         <result column="MODIFIED_TIME" property="modifiedTime" />
