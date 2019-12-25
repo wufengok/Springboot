@@ -2,7 +2,7 @@ package com.study.MQ_test.Direct;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
-import com.skonst.report.MQ_test.ConnectionUtil;
+import com.study.MQ_test.ConnectionUtil;
 
 public class TestReceive_Direct {
     private final static String QUEUE_NAME = "queuesname";

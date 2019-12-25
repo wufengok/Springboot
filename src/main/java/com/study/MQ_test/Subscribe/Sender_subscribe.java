@@ -2,7 +2,7 @@ package com.study.MQ_test.Subscribe;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
-import com.skonst.report.MQ_test.ConnectionUtil;
+import com.study.MQ_test.ConnectionUtil;
 
 public class Sender_subscribe {
     private final static String EXCHANGE_NAME = "test_exchange_fanout";

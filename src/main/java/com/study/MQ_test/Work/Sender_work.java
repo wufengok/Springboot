@@ -3,7 +3,7 @@ package com.study.MQ_test.Work;
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
-import com.skonst.report.MQ_test.ConnectionUtil;
+import com.study.MQ_test.ConnectionUtil;
 
 import java.util.HashMap;
 

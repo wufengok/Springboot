@@ -3,7 +3,7 @@ package com.study.MQ_test.Work;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.QueueingConsumer;
-import com.skonst.report.MQ_test.ConnectionUtil;
+import com.study.MQ_test.ConnectionUtil;
 
 public class Receive_work2 {
     private final static String QUEUE_NAME = "queuesname";

@@ -4,10 +4,10 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@RabbitListener(queues = "q_hello")
+@RabbitListener(queues = "queue_direct")
 public class HelloReceiver {
-
-    /*@RabbitHandler
+/*
+    @RabbitHandler
     public void process(String hello) {
 
         System.out.println("Receiver  : " + hello);

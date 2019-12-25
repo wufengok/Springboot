@@ -1,9 +1,26 @@
 spring:          #表示该配置直接为Spring容器负责处理
   rabbitmq:
     host: 127.0.0.1
+    virtual-host: vhostname
     port: 5672
-    username: guest
-    password: guest
+    username: admin
+    password: admin
+
+    # 开启发送确认
+#    publisher-confirms: true
+#
+#    # 开启发送失败退回
+#    publisher-returns: true
+#
+#    # 消费者ack有3种模式：NONE、AUTO、MANUAL
+#    # NONE: 不管消费是否成功mq都会把消息剔除，这是默认配置方式。
+#    # MANUAL：手动应答
+#    # AUTO：自动应答，除非MessageListener抛出异常。
+#    listener:
+#      direct:
+#        acknowledge-mode: manual
+#      simple:
+#        acknowledge-mode: manual
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource   #配置当前要使用的数据源的操作类型那个
     driver-class-name: com.mysql.cj.jdbc.Driver      #配置MySQL的驱动程序类

@@ -14,12 +14,7 @@ public class RabbitMqHelloTest {
     private HelloSender helloSender;
 
     @Test
-    public void send() {
-        helloSender.send();
-    }
-
-    @Test
-    public void sendException() {
-        helloSender.sendException();
+    public void queue_direct() {
+        helloSender.queue_direct();
     }
 }
