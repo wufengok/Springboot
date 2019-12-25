@@ -1,5 +1,6 @@
 package com.skonst.report.MQ_Springboot.direct;
 
+import com.skonst.report.entity.User;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 @RabbitListener(queues = "q_hello")
 public class HelloReceiver {
 
-   @RabbitHandler
+    @RabbitHandler
     public void process(String hello) {
 
         System.out.println("Receiver  : " + hello);
@@ -34,5 +35,11 @@ public class HelloReceiver {
                 "//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //\n" +
                 "//             佛祖保佑       永不宕机      永无BUG               //\n" +
                 "////////////////////////////////////////////////////////////////////");
+    }
+
+    @RabbitHandler
+    public void process111(User user) {
+        System.out.println("Receiver  : " + user.toString());
+        System.out.println("=============================================================================================================================================");
     }
 }
