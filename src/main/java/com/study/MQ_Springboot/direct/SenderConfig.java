@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @Slf4j
-public class RabbitConfig {
+public class SenderConfig {
 
     @Bean
     public RabbitTemplate createRabbitTemplate(ConnectionFactory connectionFactory){

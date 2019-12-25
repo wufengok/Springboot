@@ -30,14 +30,14 @@ spring:          #表示该配置直接为Spring容器负责处理
       initial-size: 5     #初始化提供的连接数
       max-total: 5          #最大的连接数
       max-wait-millis: 200        #等待连接获取的最大超时时间
-  jpa:
-    properties:
-      hibernate:
-        hbm2ddl:
-#          auto: create
-        #dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-        format_sql: true
-    show-sql: true
+#  jpa:
+#    properties:
+#      hibernate:
+#        hbm2ddl:
+##          auto: create
+#        #dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#        format_sql: true
+#    show-sql: true
 #mybatis:
 #  mapper-locations: classpath:mapping/*Mapper.xml
 #  type-aliases-package: com.skonst.report.mapper
