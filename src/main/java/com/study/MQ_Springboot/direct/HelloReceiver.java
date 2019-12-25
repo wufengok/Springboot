@@ -9,9 +9,6 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.listener.api.ChannelAwareMessageListener;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Component
 @RabbitListener(queues = "queue_direct")
 @Slf4j
@@ -28,24 +25,13 @@ public class HelloReceiver implements ChannelAwareMessageListener {
             channel.basicAck(deliveryTag, true);
 
         } catch (Exception e) {
+
             //用于否定确认
             channel.basicNack(deliveryTag,false,true);
 //			channel.basicReject(deliveryTag, true);//为true会重新放回队列
+
             e.printStackTrace();
         }
-    }
-
-    //{key=value,key=value,key=value} 格式转换成map
-    private Map<String, String> mapStringToMap(String str) {
-        str = str.substring(1, str.length() - 1);
-        String[] strs = str.split(",");
-        Map<String, String> map = new HashMap<String, String>();
-        for (String string : strs) {
-            String key = string.split("=")[0].trim();
-            String value = string.split("=")[1];
-            map.put(key, value);
-        }
-        return map;
     }
 
     @RabbitHandler
