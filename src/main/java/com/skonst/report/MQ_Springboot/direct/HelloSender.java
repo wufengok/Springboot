@@ -1,4 +1,4 @@
-package com.skonst.report.MQ_Springboot;
+package com.skonst.report.MQ_Springboot.direct;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

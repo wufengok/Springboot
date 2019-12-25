@@ -1,4 +1,4 @@
-package com.skonst.report.MQ_Springboot;
+package com.skonst.report.MQ_Springboot.direct;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +14,7 @@ public class RabbitMqHelloTest {
     private HelloSender helloSender;
 
     @Test
-    public void hello() throws Exception {
+    public void hello() {
         helloSender.send();
     }
 }
