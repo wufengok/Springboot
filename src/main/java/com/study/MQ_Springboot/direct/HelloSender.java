@@ -1,10 +1,7 @@
 package com.study.MQ_Springboot.direct;
 
-import com.study.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.AmqpTemplate;
-import org.springframework.amqp.core.Message;
-import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,8 +10,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Component
-@Slf4j
-public class HelloSender implements RabbitTemplate.ConfirmCallback,RabbitTemplate.ReturnCallback  {
+@Slf4j   //implements RabbitTemplate.ConfirmCallback,RabbitTemplate.ReturnCallback
+public class HelloSender   {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -32,16 +29,16 @@ public class HelloSender implements RabbitTemplate.ConfirmCallback,RabbitTemplat
         String context = "hello " + date;
         System.out.println("Sender : " + context);
 
-        User user = new User();
+        /*User user = new User();
         user.setId(1L);
-        user.setNickName("大饼");
+        user.setNickName("大饼");*/
 
         //简单对列的情况下routingKey即为Q名
         //this.rabbitTemplate.convertAndSend("q_hello", user);
         this.amqpTemplate.convertAndSend("queue_direct", context);
     }
 
-    @Override
+    /*@Override
     public void confirm(CorrelationData correlationData, boolean ack, String cause) {
         log.info("ConfirmCallback:     "+"相关数据："+correlationData);
         log.info("ConfirmCallback:     "+"确认情况："+ack);
@@ -55,5 +52,5 @@ public class HelloSender implements RabbitTemplate.ConfirmCallback,RabbitTemplat
         log.info("ReturnCallback:     "+"回应信息："+replyText);
         log.info("ReturnCallback:     "+"交换机："+exchange);
         log.info("ReturnCallback:     "+"路由键："+routingKey);
-    }
+    }*/
 }
