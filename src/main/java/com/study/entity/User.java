@@ -1,46 +1,31 @@
 package com.study.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.io.Serializable;
 
-@Entity
+/**
+ * <p>
+ *
+ * </p>
+ *
+ * @author wufeng
+ * @since 2019-12-27
+ */
 @Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
 public class User implements Serializable {
 
     private static final long serialVersionUID=1L;
 
-    @Id
-    @GeneratedValue
-    private Long id;
+    private Integer id;
 
-    @Column(nullable = false, unique = true)
-    private String userName;
+    private String name;
 
-    @Column(nullable = false)
-    private String passWord;
+    private Integer age;
 
-    @Column(nullable = false, unique = true)
-    private String email;
 
-    @Column(nullable = true, unique = true)
-    private String nickName;
-
-    @Column(nullable = false)
-    private String regTime;
-
-    public User(String userName, String passWord, String email, String nickName, String regTime) {
-        this.userName = userName;
-        this.passWord = passWord;
-        this.email = email;
-        this.nickName = nickName;
-        this.regTime = regTime;
-    }
-
-    public User() {
-    }
 }

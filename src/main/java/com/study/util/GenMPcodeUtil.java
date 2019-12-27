@@ -19,7 +19,7 @@ public class GenMPcodeUtil {
     public static void main(String[] args) {
         //generateCode(new String[]{"sys_user_role"});
         System.out.println(IdWorker.getId());
-        generateCode("cof_user_account");
+        generateCode("user");
     }
 
     /**
@@ -42,7 +42,7 @@ public class GenMPcodeUtil {
                 .setDataSource(
                         new DataSourceConfig()
                                 .setDbType(DbType.MYSQL)
-                                .setUrl("jdbc:mysql://localhost:3306/djcof?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC")
+                                .setUrl("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC")
                                 .setUsername("root")
                                 .setPassword("1")
                                 .setDriverName("com.mysql.cj.jdbc.Driver")
