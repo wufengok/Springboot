@@ -1,6 +1,7 @@
 package com.study.MQ_Springboot.direct;
 
 import com.rabbitmq.client.Channel;
+import com.study.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;

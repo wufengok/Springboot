@@ -1,5 +1,8 @@
 package com.study.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.study.entity.User;
 
@@ -13,4 +16,7 @@ import com.study.entity.User;
  */
 public interface IUserService extends IService<User> {
 
+    IPage<User> selectUserPage(Page<User> page, QueryWrapper queryWrapper);
 }
+
+
