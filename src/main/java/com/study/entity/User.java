@@ -21,7 +21,8 @@ public class User implements Serializable {
 
     private static final long serialVersionUID=1L;
 
-    private Integer id;
+    //@TableId(type = IdType.ID_WORKER) //雪花id  在配置文件里面可以设置
+    private Long id;
 
     private String name;
 

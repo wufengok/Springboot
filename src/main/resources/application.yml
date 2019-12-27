@@ -44,12 +44,12 @@ spring:          #表示该配置直接为Spring容器负责处理
 #  mapper-locations: classpath:mapping/*Mapper.xml
 #  type-aliases-package: com.skonst.report.mapper
 # MyBatis
-#mybatis-plus:
+mybatis-plus:
 #  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
 #  # 如果是放在resource目录 classpath:/mapper/*Mapper.xml
-#  mapper-locations: classpath:mapping/*Mapper.xml
+  mapper-locations: classpath:mapping/*Mapper.xml
 #  #实体扫描，多个package用逗号或者分号分隔
-#  typeAliasesPackage: com.skonst.report.entity
+  typeAliasesPackage: com.study.entity
 #  global-config:
 #    worker-id: 1 #机器id
 #    datacenter-id: 1 #数据标识id
@@ -57,9 +57,9 @@ spring:          #表示该配置直接为Spring容器负责处理
 #    #sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
 #    #自定义填充策略接口实现
 #    #meta-object-handler: com.baomidou.springboot.MyMetaObjectHandler
-#    db-config:
-#      db-type: mysql
-#      id-type: INPUT  #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+  db-config:
+    db-type: mysql
+    id-type: id_worker  #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
 #      #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
 #      field-strategy: 2
 #      #            logic-delete-value: 1

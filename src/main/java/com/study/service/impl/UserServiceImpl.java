@@ -10,6 +10,8 @@ import com.study.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -28,5 +30,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     public IPage<User> selectUserPage(Page<User> page, QueryWrapper queryWrapper) {
         IPage pageData = this.page(page, queryWrapper);
         return pageData;
+    }
+
+    @Override
+    public void insert(List list) {
+        this.saveBatch(list);
     }
 }

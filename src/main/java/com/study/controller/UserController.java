@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -23,12 +25,12 @@ import java.util.List;
  * @since 2019-12-27
  */
 @Controller
-@RequestMapping("/user")
+@RequestMapping("")
 public class UserController {
     @Autowired
     IUserService userService;
 
-    @GetMapping("/testtest")
+    @GetMapping("/select")
     @ResponseBody
     public String selectMyPage() {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
@@ -61,5 +63,55 @@ public class UserController {
 
         return records1.toString();
     }
+
+    @GetMapping("/insert")
+    @ResponseBody
+    public String insert() {
+
+        List list = new ArrayList();
+        User user1 = new User();
+        user1.setName("wufeng1");
+        user1.setAge(11);
+
+        User user2 = new User();
+        user2.setName("wufeng2");
+        user2.setAge(11);
+
+        User user3 = new User();
+        user3.setName("wufeng3");
+        user3.setAge(11);
+
+        User user4 = new User();
+        user4.setName("wufeng4");
+        user4.setAge(11);
+
+        Collections.addAll(list,user1,user2,user3,user4);
+
+        userService.insert(list);
+        return "";
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
